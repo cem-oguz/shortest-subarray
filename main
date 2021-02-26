@@ -1,0 +1,26 @@
+def f1(nums):
+    left_ind=0
+    right_ind=len(nums)-1
+    max_=float('-inf')
+    min_=float('inf')
+    left=0
+    right=-1
+    
+    while right_ind>=0:
+        #when I find a number greater than previous num
+        if nums[left_ind] >=max_:
+            max_=nums[left_ind]
+        else:
+             right=left_ind
+                
+                
+            #when I find a number less than previous num
+        if nums[right_ind] <=min_:
+            min_= nums[right_ind]
+        else :
+            left = right_ind
+            
+        left_ind+=1
+        right_ind-=1
+        
+    return right-left+1
